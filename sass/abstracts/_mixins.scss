@@ -1,0 +1,51 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// MEDIA QUERY
+/* 
+  Phone - 0 600px
+  Tablet (portarait) - 600 900px
+  Tablet (Landspcape - 900 1200px
+  Desktop - 1200 1800px
+  Big screen 1800 - cheksiz  
+*/
+
+/*
+    ORDER: BASE > Typography > General Layout > GRID (FLEX) > Page Layout > Components
+*/
+
+@mixin Phone {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+// QUERY MANAGER
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == big {
+    @media only screen and (min-width: 112.5em) {
+      @content; // 1800px
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content; // 1200px
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content; // 900px
+    }
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content; // 600px
+    }
+  }
+}

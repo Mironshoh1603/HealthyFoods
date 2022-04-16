@@ -1,0 +1,129 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -25vh;
+  @include responsive(tab-port) {
+    padding: 15rem 0;
+  }
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../../img/nat-4.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+
+  & > * {
+    transform: skewY(7deg);
+  }
+  @include responsive(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 5rem 0;
+  margin-top: -10rem;
+}
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0;
+}
+.section-book {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary,
+    $color-primary-dark
+  );
+  padding: 15rem 0;
+}
+.book {
+  @include responsive(phone) {
+    margin: 0 2rem;
+    height: auto;
+  }
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.8) 0%,
+      rgba($color-white, 0.8) 50%,
+      transparent 50%
+    ),
+    url("/img/nat-10.jpg");
+  @include responsive(tab-port) {
+    background-image: linear-gradient(
+        rgba($color-white, 0.8) 0%,
+        rgba($color-white, 0.8) 100%
+      ),
+      url("/img/nat-10.jpg");
+  }
+  height: 50rem;
+  background-size: cover;
+  &__form {
+    width: 50%;
+    padding: 4rem;
+    @include responsive(tab-port) {
+      width: 100%;
+    }
+  }
+  &__heading {
+    margin-top: -2rem;
+  }
+}
+
+.row:target .col-1-of-3 .card .card__side--back {
+  animation-name: card_rotate_back;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+}
+.row:target .col-1-of-3 .card .card__side--front {
+  animation-name: card_rotate_front;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+}
+@keyframes card_rotate_back {
+  0% {
+    transform: rotateY(0deg) scale(0.25);
+  }
+  25% {
+    transform: rotate(360deg) scale(0.4);
+  }
+  50% {
+    transform: rotate(720deg) scale(0.6);
+  }
+  75% {
+    transform: rotate(1080deg) scale(0.8);
+  }
+  100% {
+    transform: rotateY(1440deg) scale(1);
+  }
+}
+@keyframes card_rotate_front {
+  0% {
+    transform: rotateY(-180deg) scale(0.25);
+  }
+  25% {
+    transform: rotate(180deg) scale(0.4);
+  }
+  50% {
+    transform: rotate(540deg) scale(0.6);
+  }
+  75% {
+    transform: rotate(900deg) scale(0.8);
+  }
+  100% {
+    transform: rotateY(1260deg) scale(1);
+  }
+}
+
+// .section-stories {
+//   padding: 15rem 0;
+//   background-color: $color-grey-light-1;
+// }

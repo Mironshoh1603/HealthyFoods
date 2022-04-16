@@ -1,0 +1,70 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &__input {
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem;
+    width: 70%;
+    background-color: $color-white;
+    border-radius: 2px;
+    border: none;
+    display: block;
+    border-bottom: 3px solid transparent;
+    transition: all 0.4s;
+    &:focus {
+      border-bottom: 3px solid rgb(85, 245, 22);
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-light-2;
+      &::placeholder {
+        color: red;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  &__group {
+    position: relative;
+  }
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: -0.5rem;
+    transition: all 0.5s;
+  }
+  &__group:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+  &__input:not(:placeholder-shown) + &__label {
+    top: 6rem;
+    opacity: 1;
+    font-size: 1.4rem;
+    z-index: 100;
+  }
+  &__radio-group {
+    display: inline-block;
+    @include responsive(phone) {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  &__label-radio {
+    font-size: 1.8rem;
+  }
+  &__radio-group {
+    .form-radio {
+      display: none;
+    }
+  }
+  .radio-button--span {
+  }
+}

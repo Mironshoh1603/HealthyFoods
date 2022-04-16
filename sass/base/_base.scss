@@ -1,0 +1,40 @@
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //10px
+
+  @include responsive(big) {
+    font-size: 75%; //12px
+  }
+  @include responsive(tab-land) {
+    font-size: 56.25%; //9px
+  }
+  @include responsive(tab-port) {
+    font-size: 50%; //8px
+  }
+  // @include responsive(phone) {
+  //   font-size: 43.75%; //7px
+  // }
+
+  scroll-behavior: smooth;
+}
+
+body {
+  /* font-size: 16px; */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+  box-sizing: border-box;
+
+  @include responsive(tab-port) {
+    padding: 0;
+    line-height: 1.6;
+  }
+}

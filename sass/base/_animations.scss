@@ -1,0 +1,61 @@
+@keyframes moveInLeft {
+  0% {
+    transform: translate(-10rem);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translate(1rem);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translate(10rem);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translate(-1rem);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveLogo {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(85vw, 0) rotate(90deg) rotate3d();
+  }
+  50% {
+    transform: translate(85vw, 55vh) rotate(180deg);
+  }
+
+  75% {
+    transform: translate(0, 80vh) rotate(270deg);
+  }
+
+  100% {
+    transform: translate(0) rotate(360deg);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(7rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
